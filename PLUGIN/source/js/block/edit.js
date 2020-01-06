@@ -3,7 +3,7 @@
  */
 
 const { PanelBody, TextControl } = wp.components;
-const { InspectorControls } = wp.editor;
+const { InspectorControls } = wp.blockEditor;
 const { Fragment } = wp.element;
 
 let PLUGINEdit = ( props ) => {

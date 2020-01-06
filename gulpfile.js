@@ -10,13 +10,13 @@ const gulp       = require( 'gulp' ),
 
 // Array of JS files, in order by dependency.
 const jsFiles = [
-  'PLUGIN/source/block/colors/index.js'
+  'PLUGIN/source/js/block/index.js'
 ];
 
 // JS build task.
 gulp.task( 'js', () => {
   return browserify( { entries: jsFiles } )
-    .transform( 'babelify', { presets: ['es2015', 'react'] } )
+    .transform( 'babelify', { presets: [ 'es2015', 'react' ] } )
     .bundle()
     .pipe( source( 'PLUGIN.min.js' ) )
     .pipe( buffer() )
@@ -26,7 +26,7 @@ gulp.task( 'js', () => {
 
 // CSS build task.
 gulp.task( 'css', () => {
-  return gulp.src( 'PLUGIN/source/scss/PLUGIN.scss' )
+  return gulp.src( 'PLUGIN/source/scss/editor.scss' )
     .pipe( sass().on( 'error', sass.logError ) )
     .pipe( clean() )
     .pipe( rename( { suffix: '.min' } ) )
