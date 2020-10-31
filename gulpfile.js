@@ -1,37 +1,20 @@
 const gulp       = require( 'gulp' ),
-      babel      = require( 'gulp-babel' )
       browserify = require( 'browserify' ),
       buffer     = require( 'vinyl-buffer' ),
-      clean      = require( 'gulp-clean-css' ),
-      rename     = require( 'gulp-rename' ),
-      sass       = require( 'gulp-sass' ),
       source     = require( 'vinyl-source-stream' ),
       uglify     = require( 'gulp-uglify' );
 
-// Array of JS files, in order by dependency.
-const jsFiles = [
-  'PLUGIN/source/js/block/index.js'
-];
 
-// JS build task.
-gulp.task( 'js', () => {
-  return browserify( { entries: jsFiles } )
-    .transform( 'babelify', { presets: [ 'es2015', 'react' ] } )
+// Build JS files.
+function jsTask() {
+  return browserify( { entries: ['PLUGIN/source/scripts.js'] } )
+    .transform( 'babelify', { presets: [ '@babel/preset-env', '@babel/preset-react' ] } )
     .bundle()
-    .pipe( source( 'PLUGIN.min.js' ) )
+    .pipe( source( 'scripts.min.js' ) )
     .pipe( buffer() )
     .pipe( uglify() )
-    .pipe( gulp.dest( 'PLUGIN/build' ) );
-} );
+    .pipe( gulp.dest( 'PLUGIN/build/js' ) );
+}
 
-// CSS build task.
-gulp.task( 'css', () => {
-  return gulp.src( 'PLUGIN/source/scss/editor.scss' )
-    .pipe( sass().on( 'error', sass.logError ) )
-    .pipe( clean() )
-    .pipe( rename( { suffix: '.min' } ) )
-    .pipe( gulp.dest( 'PLUGIN/build' ) );
-} );
 
-// Default task.
-gulp.task( 'default', gulp.series( 'js', 'css' ) );
+gulp.task( 'default', jsTask );
