@@ -10,4 +10,9 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+  exit;
+}
+
 require_once( 'inc/set-assets.php' );
