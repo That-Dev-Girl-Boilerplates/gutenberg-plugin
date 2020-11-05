@@ -15,20 +15,8 @@ const MyBlock = ( () => {
     category: 'common',
     icon: MyBlockIcons.block,
     example: { attributes: {} }, // Show default example.
-
-    // Remove ability to have a custom class name.
-    supports: {
-      customClassName: false
-    },
-
-    edit: ( props ) => {
-      return ( MyBlockEdit( props ) );
-    },
-
-    // Dynamic block rendered in the PHP.
-    save: () => {
-      return null;
-    }
+    edit: ( props ) => { return ( MyBlockEdit( props ) ); },
+    save: () => { return null; }
   } );
 
 } )();

@@ -4,7 +4,9 @@
  * Add Javascript and CSS assets to the admin.
  */
 
-class PLUGINAssets {
+namespace ThatDevGirl\PLUGIN;
+
+class Assets {
   const JS = '../build/scripts.min.js';
 
 
@@ -34,6 +36,7 @@ class PLUGINAssets {
 
 }
 
+
 if ( is_admin() ) {
-  new PLUGINAssets();
+  new Assets();
 }
