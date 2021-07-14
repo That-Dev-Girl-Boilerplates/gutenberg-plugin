@@ -1,6 +1,6 @@
 === PLUGIN_TITLE ===
 Contributors: thatdevgirl
-Donate Link: https://www.paypal.me/thatdevgirl
+Donate Link: https://www.buymeacoffee.com/thatdevgirl
 Tags: tag1, tag2, tag3
 Requires at least: 5.0
 Tested up to: 5.5
