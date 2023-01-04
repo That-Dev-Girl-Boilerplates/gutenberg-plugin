@@ -2,20 +2,17 @@
  * BLOCK: My Block
  */
 
-import MyBlockEdit from './edit.js';
-import MyBlockIcons from './icons.js';
+import { default as Edit } from './edit.js';
+import { default as Icons } from './icons.js';
+import { default as Metadata } from './block.json';
 
 const MyBlock = ( () => {
 
   const { registerBlockType } = wp.blocks;
 
-  registerBlockType( 'tdg/my-block', {
-    title: 'BLOCK NAME',
-    description: '',
-    category: 'common',
-    icon: MyBlockIcons.block,
-    example: { attributes: {} }, // Show default example.
-    edit: ( props ) => { return ( MyBlockEdit( props ) ); },
+  registerBlockType( Metadata, {
+    icon: Icons.block,
+    edit: ( props ) => { return ( Edit( props ) ); },
     save: () => { return null; }
   } );
 

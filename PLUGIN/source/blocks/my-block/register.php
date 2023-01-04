@@ -21,14 +21,7 @@ class MyBlock {
    * @return void
    */
   public function register(): void {
-    register_block_type( 'tdg/my-block', [
-
-      // Set up block attributes.
-      'attributes' => [
-        'content' => [ 'type' => 'string' ]
-      ],
-
-      // Declare render callback function.
+    register_block_type( __DIR__, [
       'render_callback' => [ $this, 'render' ]
     ] );
   }
