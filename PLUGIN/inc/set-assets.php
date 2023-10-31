@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Add Javascript and CSS assets to the admin.
+ * Add JavaScript and CSS assets to the admin.
  */
 
 namespace ThatDevGirl\PLUGIN;

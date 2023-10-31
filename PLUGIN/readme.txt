@@ -3,7 +3,7 @@ Contributors: thatdevgirl
 Donate Link: https://www.buymeacoffee.com/thatdevgirl
 Tags: tag1, tag2, tag3
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.4
 Stable tag: 1.0
 
 This WordPress plugin adds a new (Gutenberg) post editor block that does [enter description here].
@@ -20,7 +20,7 @@ _Long description goes here._
 
 == Screenshots ==
 
-1.
+1. DESCRIPTION OF SCREENSHOT
 
 == Changelog ==
 
